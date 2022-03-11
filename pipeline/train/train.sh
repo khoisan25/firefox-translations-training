@@ -34,7 +34,7 @@ echo "### Training ${model_dir}"
   -c "configs/model/${model_type}.yml" "configs/training/${model_type}.${training_type}.yml" \
   --train-sets "${train_set_prefix}".{"${src}","${trg}"}.gz \
   -T "${model_dir}/tmp" \
-  --shuffle-in-ram \
+  #--shuffle-in-ram \
   --vocabs "${vocab}" "${vocab}" \
   -w "${WORKSPACE}" \
   --devices ${GPUS} \
