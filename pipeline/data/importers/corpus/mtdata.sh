@@ -21,8 +21,8 @@ trg_iso=$(python -c "from mtdata.iso import iso3_code; print(iso3_code('${trg}',
 
 mtdata get -l "${src}-${trg}" -tr "${dataset}" -o "${tmp}" --compress
 
-mv "${tmp}/train-parts/${dataset}.${src_iso}"*".gz" "${output_prefix}.${src}.gz"
-mv "${tmp}/train-parts/${dataset}.${trg_iso}"*".gz" "${output_prefix}.${trg}.gz"
+mv "${tmp}/train-parts/${dataset}.${src_iso}"*[^\.]".gz" "${output_prefix}.${src}.gz"
+mv "${tmp}/train-parts/${dataset}.${trg_iso}"*[^\.]".gz" "${output_prefix}.${trg}.gz"
 
 rm -rf "${tmp}"
 
